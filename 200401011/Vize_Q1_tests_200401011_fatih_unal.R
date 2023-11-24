@@ -25,6 +25,11 @@ test_that("spotify_token() çağrıldığında döndürdüğü listenin iki elem
   expect_true(length(result) == 2)
 })
 
+# 1.5
+test_that("spotify_token() çağrıldığında döndürdüğü listenin ilk elementinin ismi status_code olmalı", {
+  result <- spotify_token()
+  expect_true(names(result)[1]=="status_code")
+})
 
 
 
