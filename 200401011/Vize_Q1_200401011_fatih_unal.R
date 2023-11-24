@@ -2,7 +2,7 @@ library(httr)
 
 
 spotify_token <- function(){
-  response <- POST(
+  response <- httr::POST(
     "https://accounts.spotify.com/api/token",
     config = authenticate(user = Sys.getenv("SPOTIFY_ID"), 
                           password = Sys.getenv("SECRET_KEY")),
@@ -13,6 +13,5 @@ spotify_token <- function(){
   bearer.Token = paste(getToken$token_type, getToken$access_token)
   return(list(status_code = response$status_code, token=bearer.Token))
 }
-
 
 
