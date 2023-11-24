@@ -43,3 +43,8 @@ test_that("spotify_token() çağrıldığında döndürdüğü listenin status_c
   expect_true(result$status_code == 200)
 })
 
+# T 1.8
+test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci elementinin ismi token olmalı", {
+  result <- spotify_token()
+  expect_true(names(result)[2]=="token")
+})
