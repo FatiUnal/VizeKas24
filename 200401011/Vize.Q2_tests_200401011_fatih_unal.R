@@ -11,3 +11,11 @@ test_that("Global Workspace’de spotify_search_artist adlı bir değişken olma
 test_that("spotify_search_artist adlı değişkenin tipi “function” olmalı.", {
   expect_true(is.function(spotify_search_artist))
 })
+
+
+#2.3
+test_that("spotify_search_artist() herhangi bir artist ismi ile çağrıldığında döndürdüğü çıktı bir liste olmalı.", {
+  result <- spotify_search_artist("Ceza")
+  expect_true(typeof(result) == "list")
+})
+
