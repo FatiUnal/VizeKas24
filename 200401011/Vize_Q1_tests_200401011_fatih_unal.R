@@ -48,3 +48,12 @@ test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci e
   result <- spotify_token()
   expect_true(names(result)[2]=="token")
 })
+
+# T 1-9
+test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci elementinin class’ı character olmalı", {
+  result <- spotify_token()
+  expect_true(is.character(result[[2]]))
+})
+
+
+
