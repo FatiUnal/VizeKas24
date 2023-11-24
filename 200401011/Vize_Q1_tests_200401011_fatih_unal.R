@@ -19,6 +19,12 @@ test_that("spotify_token() çağrıldığında döndürdüğü çıktı bir list
   expect_true(typeof(result) == "list")
 })
 
+# 1.4
+test_that("spotify_token() çağrıldığında döndürdüğü listenin iki elementi olmalı", {
+  result <- spotify_token()
+  expect_true(length(result) == 2)
+})
+
 
 
 
