@@ -31,5 +31,10 @@ test_that("spotify_token() çağrıldığında döndürdüğü listenin ilk elem
   expect_true(names(result)[1]=="status_code")
 })
 
+# T 1.6
+test_that("spotify_token() çağrıldığında döndürdüğü listenin ilk elementinin class’ı numeric olmalı", {
+  result <- spotify_token()
+  expect_true(is.numeric(result[[1]]))
+})
 
 
