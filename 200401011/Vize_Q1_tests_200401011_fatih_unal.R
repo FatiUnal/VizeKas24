@@ -49,17 +49,25 @@ test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci e
   expect_true(names(result)[2]=="token")
 })
 
-# T 1-9
+# T 1.9
 test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci elementinin class’ı character olmalı", {
   result <- spotify_token()
   expect_true(is.character(result[[2]]))
 })
 
-# T 1-10
+# T 1.10
 test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci elementinin class’ı character olmalı", {
   result <- spotify_token()
   expect_true(grepl("^Bearer ",result[[2]]))
 })
+
+# T 1.11
+test_that("spotify_token() çağrıldığında döndürdüğü listenin ikinci elementi character değişkeninin içinde 122 adet harf bulunmalı", {
+  result <- spotify_token()
+  expect_true(nchar(result[[2]]) == 122)
+})
+
+
 
 
 
